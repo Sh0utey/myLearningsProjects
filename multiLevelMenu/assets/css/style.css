@@ -1,0 +1,63 @@
+/*RESET*/
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/*NAV*/
+nav ul {
+  display: flex;
+  justify-content: center;
+  background-color: red;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+nav ul ul {
+  flex-direction: column;
+}
+
+nav ul a {
+  display: block;
+  padding: 15px;
+}
+
+nav ul a:hover {
+  background-color: white;
+  color: black;
+}
+
+nav ul li,
+nav ul ul li {
+  position: relative;
+}
+
+nav ul ul,
+nav ul ul ul {
+  position: absolute;
+  width: 200px;
+  display: none;
+}
+
+nav ul ul ul {
+  left: 200px;
+  top: 0;
+}
+
+nav > ul > li:hover > ul,
+nav > ul > li > ul > li:hover > ul {
+  display: block;
+}

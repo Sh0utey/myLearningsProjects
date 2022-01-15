@@ -1,0 +1,55 @@
+.calculator {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 70px repeat(5, 50px);
+  width: 300px;
+  margin: 0 auto;
+  border: 1px solid teal;
+  border-radius: 10px;
+  grid-template-areas:
+    "result result result result"
+    "7 8 9 division"
+    "4 5 6 multiply"
+    "1 2 3 minus"
+    "0 dot equal equel"
+    "clear clear clear clear";
+  background-color: rgb(79, 131, 133);
+}
+
+button {
+  background-color: teal;
+  color: white;
+  cursor: pointer;
+  font-size: 2rem;
+  border: solid 1px rgb(1, 93, 93);
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: rgb(2, 173, 173);
+}
+
+.result {
+  grid-area: result;
+  text-align: right;
+  font-size: 3rem;
+  margin: auto 10px auto 0;
+  color: white;
+}
+
+#reset {
+  grid-area: clear;
+  background-color: rgb(47, 47, 47);
+}
+
+#reset:hover {
+  background-color: rgb(78, 78, 78);
+}
+
+.operator {
+  background-color: rgb(148, 32, 32);
+}
+
+.operator:hover {
+  background-color: rgb(184, 41, 41);
+}

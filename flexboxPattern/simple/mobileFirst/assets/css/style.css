@@ -1,0 +1,55 @@
+/*MOBILE < 800px */
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+}
+
+header, .content, aside, footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    background-color: green;
+    flex: 1;
+}
+
+.content {
+    background-color: red;
+    flex: 3
+}
+
+aside {
+    background-color: orange;
+    flex: 1;
+}
+
+footer {
+    background-color: blue;
+    flex: 1;
+}
+
+/* DESKTOP > 800px */
+@media screen and (min-width: 800px) {
+    .main {
+        flex-direction: row;
+    }
+}
