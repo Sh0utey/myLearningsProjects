@@ -5,3 +5,4 @@ All my projects that I've done to learn basics programmation languages like HTML
 - gridPattern : differents design templates using 'grid' with the 2 approaches : mobile first and desktop first.
 - multiLevelMenu : basic menu on 3 levels (mobile design has not been done yet).
 - simpleCalculator : basic calculator to do basic calculations.
+- killTheBubble : simple game that generate bubbles randomly and display how many of them the user have clicked.
