@@ -1,30 +1,35 @@
 const counterDisplay = document.getElementById("counterDisplay");
-let counter = 0;
+let count = 0;
+const resetButton = document.getElementById("resetButton");
 
-const bubbleMaker = () => {
+const bubbleGenerator = () => {
   const bubble = document.createElement("span");
   bubble.classList.add("bubble");
   document.body.appendChild(bubble);
 
   const size = Math.random() * 200 + 100 + "px";
+  const plusMinus = Math.random() > 0.5 ? 1 : -1;
+
   bubble.style.height = size;
   bubble.style.width = size;
-
   bubble.style.top = Math.random() * 100 + 50 + "%";
   bubble.style.left = Math.random() * 100 + "%";
-
-  const plusMinus = Math.random() > 0.5 ? 1 : -1;
   bubble.style.setProperty("--left", Math.random() * 100 * plusMinus + "%");
 
   bubble.addEventListener("click", () => {
-    counter++;
-    counterDisplay.textContent = counter;
+    count++;
+    counterDisplay.textContent = count;
     bubble.remove();
   });
 
-  setTimeout(() => {
+  resetButton.addEventListener("click", () => {
+    count = 0;
+    counterDisplay.textContent = 0;
+  });
+
+  setInterval(() => {
     bubble.remove();
-  }, 8000);
+  }, 9000);
 };
 
-setInterval(bubbleMaker, 500);
+setInterval(bubbleGenerator, 600);
