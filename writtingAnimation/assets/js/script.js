@@ -3,7 +3,7 @@ const word = document.getElementById("word");
 
 const AnimatedText = () => {
   for (let iWord = 0; iWord < words.length; iWord++) {
-    //  BE CAREFUL : 'wordTiming' needs to be at least equal or have a higher value than the sum of writting time AND erasing time
+    //  BE CAREFUL : 'wordTiming' needs to be at least equal or have a higher value than the sum of writing time AND erasing time
     const wordTiming = 3600;
     setTimeout(() => {
       //infinte loop
@@ -16,7 +16,7 @@ const AnimatedText = () => {
       let iLetter = 0;
 
       for (let iLetter = 0; iLetter < words[iWord].length; iLetter++) {
-        //Writting letter until word completed
+        //writing letter until word completed
         setTimeout(() => {
           word.textContent += words[iWord][iLetter];
           let wordLength = word.textContent.length;
