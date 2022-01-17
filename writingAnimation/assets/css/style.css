@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 5rem;
+}
+
+h3 {
+  display: flex;
+  align-items: center;
+}
+
+#iam {
+  color: rgba(0, 0, 0, 0.733);
+}
+
+#word {
+  color: rgb(93, 182, 185);
+}
+
+#cursor {
+  display: block;
+  background-color: black;
+  height: 110px;
+  width: 5px;
+  animation: anim ease 1s infinite;
+  opacity: 0;
+}
+
+@keyframes anim {
+  to {
+    opacity: 1;
+  }
+}
