@@ -9,3 +9,4 @@ All my projects that I've done to learn basics programmation languages like HTML
 - killTheBubble : simple game that generate bubbles randomly and display how many of them the user have clicked.
 - writingAnimation : writing and erasing simulation of a text.
 - passwordGenerator : a simple application that generates password after choosing between many options like length, uppercase, lowercase, number and symbol.
+- formChecker : a simple form that verify what the user is currently typing
