@@ -29,13 +29,6 @@ body {
   border-radius: 50px;
 }
 
-#form-container span {
-  display: block;
-  color: red;
-  height: 1vh;
-  flex: 1;
-}
-
 .username-container,
 .email-container,
 .password-container,
@@ -60,7 +53,15 @@ body {
 .confirm-container input {
   background-color: rgba(0, 0, 0, 0.055);
   border: solid 1px rgba(0, 0, 0, 0.171);
-  flex: 1.8;
+  height: 3vh;
+}
+
+.username-container span,
+.email-container span,
+.password-container span,
+.confirm-container span {
+  color: red;
+  flex: 1;
 }
 
 .submit-container input {
@@ -82,4 +83,28 @@ body {
 
 .submit-container input:hover {
   filter: brightness(150%);
+}
+
+.progress-bar-empty {
+  height: 1vh;
+  background-color: inherit;
+  width: inherit;
+}
+
+.progress-bar-red {
+  height: 1vh;
+  background-color: red;
+  width: 33%;
+}
+
+.progress-bar-orange {
+  height: 1vh;
+  background-color: orange;
+  width: 67%;
+}
+
+.progress-bar-green {
+  height: 1vh;
+  background-color: green;
+  width: 100%;
 }
