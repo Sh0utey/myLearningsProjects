@@ -1,0 +1,85 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#game-board {
+  display: flex;
+  background-color: red;
+  height: 100vh;
+  width: 98vw;
+  align-items: center;
+  transform: translate(1vw);
+  position: relative;
+}
+
+#racket1,
+#racket2 {
+  background-color: black;
+  height: calc(30vh - 5vw);
+  width: 1.5vw;
+  position: absolute;
+}
+
+#racket1 {
+  left: 0;
+}
+
+#racket2 {
+  right: 0;
+}
+
+#middle-line {
+  border: none;
+  border-left: 0.2vw dotted black;
+  position: absolute;
+  left: 50%;
+  height: 100%;
+}
+
+#score-player1,
+#score-player2 {
+  background-color: black;
+  width: 10vw;
+  position: absolute;
+  top: 10px;
+}
+
+#score-player1 {
+  left: 25%;
+  transform: translate(-50%, 0);
+}
+
+#score-player2 {
+  right: 25%;
+  transform: translate(50%, 0);
+}
+
+#ball {
+  background-color: black;
+  position: absolute;
+  width: 2%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+}
+
+#informations-box {
+  background-color: rgba(0, 0, 0, 0.363);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 20vw;
+}
+
+/*RATIO IS 1:1 RESPONSIVE*/
+#ball:after,
+#score-player1::after,
+#score-player2:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
