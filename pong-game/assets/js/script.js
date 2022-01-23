@@ -5,30 +5,39 @@ const racketTwo = document.getElementById("racket-two");
 const scorePlayer2 = document.getElementById("score-player2");
 const ball = document.getElementById("ball");
 const informationsBox = document.getElementById("informations-box");
-let counter = 50;
+let racketOnePosition = 50;
+let racketTwoPosition = 50;
 
 //init
 const init = (racket) => {
   racket.style.setProperty("--top", "50%");
 };
 
-const moveUp = (racket) => {
-  racket.style.setProperty("--top", counter-- - 1 + "%");
+const moveUpRacketOne = () => {
+  racketOne.style.setProperty("--top", racketOnePosition-- - 1 + "%");
 };
 
-const moveDown = (racket) => {
-  racket.style.setProperty("--top", counter++ + 1 + "%");
+const moveDownRacketOne = () => {
+  racketOne.style.setProperty("--top", racketOnePosition++ + 1 + "%");
+};
+
+const moveUpRacketTwo = () => {
+  racketTwo.style.setProperty("--top", racketTwoPosition-- - 1 + "%");
+};
+
+const moveDownRacketTwo = () => {
+  racketTwo.style.setProperty("--top", racketTwoPosition++ + 1 + "%");
 };
 
 document.addEventListener("keydown", (e) => {
   if (e.key === "z") {
-    moveUp(racketOne);
+    moveUpRacketOne();
   } else if (e.key === "s") {
-    moveDown(racketOne);
+    moveDownRacketOne();
   } else if (e.key === "ArrowUp") {
-    moveUp(racketTwo);
+    moveUpRacketTwo();
   } else if (e.key === "ArrowDown") {
-    moveDown(racketTwo);
+    moveDownRacketTwo();
   }
 });
 
