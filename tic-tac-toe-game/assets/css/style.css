@@ -1,0 +1,28 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.game-container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.infos-container {
+  background-color: red;
+  flex: 1;
+}
+
+.board-container {
+  display: grid;
+  background-color: green;
+  flex: 4;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.score-container {
+  background-color: blue;
+  flex: 1;
+}
