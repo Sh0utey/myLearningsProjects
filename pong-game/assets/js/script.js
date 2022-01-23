@@ -5,28 +5,60 @@ const racketTwo = document.getElementById("racket-two");
 const scorePlayer2 = document.getElementById("score-player2");
 const ball = document.getElementById("ball");
 const informationsBox = document.getElementById("informations-box");
-let racketOnePosition = 50;
-let racketTwoPosition = 50;
+var counterRacketOne = 50;
+var counterRacketTwo = 50;
+let racketspeed = 5;
 
-//init
-const init = (racket) => {
-  racket.style.setProperty("--top", "50%");
+const moveBall = () => {};
+
+const init = () => {
+  racketOne.style.setProperty("--top", "50%");
+  racketTwo.style.setProperty("--top", "50%");
+  ball.style.display = "none";
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      ball.style.setProperty("--top", Math.random() * 100 + "%");
+      ball.style.display = "block";
+      moveBall();
+    }
+  });
 };
 
 const moveUpRacketOne = () => {
-  racketOne.style.setProperty("--top", racketOnePosition-- - 1 + "%");
+  if (counterRacketOne > 10) {
+    counterRacketOne = counterRacketOne - racketspeed;
+    racketOne.style.setProperty("--top", counterRacketOne + "%");
+  } else {
+    racketOne.style.setProperty("--top", counterRacketOne + "%");
+  }
 };
 
 const moveDownRacketOne = () => {
-  racketOne.style.setProperty("--top", racketOnePosition++ + 1 + "%");
+  if (counterRacketOne < 90) {
+    counterRacketOne = counterRacketOne + racketspeed;
+    racketOne.style.setProperty("--top", counterRacketOne + "%");
+  } else {
+    racketOne.style.setProperty("--top", counterRacketOne + "%");
+  }
 };
 
 const moveUpRacketTwo = () => {
-  racketTwo.style.setProperty("--top", racketTwoPosition-- - 1 + "%");
+  if (counterRacketTwo > 10) {
+    counterRacketTwo = counterRacketTwo - racketspeed;
+    racketTwo.style.setProperty("--top", counterRacketTwo + "%");
+  } else {
+    racketTwo.style.setProperty("--top", counterRacketTwo + "%");
+  }
 };
 
 const moveDownRacketTwo = () => {
-  racketTwo.style.setProperty("--top", racketTwoPosition++ + 1 + "%");
+  if (counterRacketTwo < 90) {
+    counterRacketTwo = counterRacketTwo + racketspeed;
+    racketTwo.style.setProperty("--top", counterRacketTwo + "%");
+  } else {
+    racketTwo.style.setProperty("--top", counterRacketTwo + "%");
+  }
 };
 
 document.addEventListener("keydown", (e) => {
@@ -41,5 +73,4 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-init(racketOne);
-init(racketTwo);
+init();
