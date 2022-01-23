@@ -8,25 +8,27 @@ body {
   background-color: red;
   height: 100vh;
   width: 98vw;
-  align-items: center;
   transform: translate(1vw);
   position: relative;
 }
 
-#racket1,
-#racket2 {
+#racket-one,
+#racket-two {
   background-color: black;
   height: calc(30vh - 5vw);
   width: 1.5vw;
   position: absolute;
+  transform: translate(0, -50%);
 }
 
-#racket1 {
+#racket-one {
   left: 0;
+  top: var(--top);
 }
 
-#racket2 {
+#racket-two {
   right: 0;
+  top: var(--top);
 }
 
 #middle-line {
