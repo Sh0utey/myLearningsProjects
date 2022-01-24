@@ -20,9 +20,83 @@ body {
   flex: 4;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "box1 box2 box3"
+    "box4 box5 box6"
+    "box7 box8 box9";
 }
 
 .score-container {
   background-color: blue;
   flex: 1;
+}
+
+.box0,
+.box1,
+.box2,
+.box3,
+.box4,
+.box5,
+.box6,
+.box7,
+.box8 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.box0 {
+  background-color: purple;
+}
+
+.box1 {
+  background-color: cyan;
+}
+
+.box2 {
+  background-color: salmon;
+}
+
+.box3 {
+  background-color: orange;
+}
+
+.box4 {
+  background-color: violet;
+}
+
+.box5 {
+  background-color: chocolate;
+}
+
+.box6 {
+  background-color: firebrick;
+}
+
+.box7 {
+  background-color: fuchsia;
+}
+
+.box8 {
+  background-color: gold;
+}
+
+/*DESKTOP*/
+@media screen and (min-width: 600px) {
+  .board-container,
+  .infos-container,
+  .score-container {
+    margin: 0 20%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .board-container,
+  .infos-container,
+  .score-container {
+    margin: 0 30%;
+  }
 }
