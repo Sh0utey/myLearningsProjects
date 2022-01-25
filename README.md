@@ -11,10 +11,10 @@ All my projects that I've done to learn basics programmation languages like HTML
 - writingAnimation : writing and erasing simulation of a text.
 - passwordGenerator : a simple application that generates password after choosing between many options like length, uppercase, lowercase, number and symbol.
 - formChecker : a simple form that verify what the user is currently typing
+- joke-generator : A french joke generator that works with an API
 
 ### Not finished yet
 
 - multiLevelMenu : basic menu on 3 levels (mobile design has not been done yet).
 - pong-game : a game with 2 players, 2 rackets and 1 ball (not finished yet : how the ball moves !?)
 - tic-tac-toe : a tic-tac-toe game with 2 players (not finished yet : have to disable click when 1 player wins)
-- joke-generator : A french joke generator that works with an API
