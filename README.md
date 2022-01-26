@@ -12,6 +12,7 @@ All my projects that I've done to learn basics programmation languages like HTML
 - passwordGenerator : a simple application that generates password after choosing between many options like length, uppercase, lowercase, number and symbol.
 - formChecker : a simple form that verify what the user is currently typing
 - joke-generator : A french joke generator that works with an API
+- user-app : generate cards with randoms users through an API
 
 ### Not finished yet
 
