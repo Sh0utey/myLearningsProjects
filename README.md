@@ -15,6 +15,8 @@ All my projects that I've done to learn basics programmation languages like HTML
 - user-app : generate cards with randoms users through an API.
 - cooking-app : an app that works with an API, on which a user can search meals and get pictures, ingredients and measures.
 - yoga-app : an app writed with OOP JS, where the user can choose between several exercises and choose the playing order, and also set a timer for each exercise.
+- canvas : just a canva where we can draw things.
+- drag-and-drop : 2 boxes where we can drag and drop some items between each others.
 
 ### Not finished yet
 
