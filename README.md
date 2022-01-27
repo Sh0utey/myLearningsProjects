@@ -13,7 +13,8 @@ All my projects that I've done to learn basics programmation languages like HTML
 - formChecker : a simple form that verify what the user is currently typing.
 - joke-generator : A french joke generator that works with an API.
 - user-app : generate cards with randoms users through an API.
-- cooking-app : an app that works with an API on which a user can search meals and get pictures, ingredients and measures.
+- cooking-app : an app that works with an API, on which a user can search meals and get pictures, ingredients and measures.
+- yoga-app : an app writed with OOP JS, where the user can choose between several exercises and choose the playing order, and also set a timer for each exercise.
 
 ### Not finished yet
 
