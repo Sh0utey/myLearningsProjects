@@ -1,0 +1,84 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.to-do-list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title {
+  background-color: teal;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 3vh 0;
+}
+
+.user-list {
+  flex: 1;
+  margin: 2vh 2vw;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+.user-list > li {
+  display: flex;
+  align-items: center;
+  padding: 3vh 0;
+  border-bottom: solid 1px rgb(200, 200, 200);
+}
+
+.user-list label {
+  user-select: none;
+  margin-right: auto;
+}
+
+#submit {
+  background-color: teal;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  padding: 20px;
+  margin: 0 1vw;
+}
+
+#submit:hover {
+  cursor: pointer;
+  filter: brightness(150%);
+}
+
+#userText {
+  flex: 1;
+  border: solid 1px rgb(200, 200, 200);
+  font-size: 1.2rem;
+  margin: 0 1vw;
+  min-width: 1vw;
+}
+
+.user-input {
+  display: flex;
+  margin: 2vh 2vw;
+}
+
+.user-list input[type="checkbox"] {
+  transform: scale(1.5);
+  margin: 0 40px;
+  cursor: pointer;
+}
+
+.warning-message {
+  margin: 0 2vw;
+  color: rgb(226, 0, 0);
+}
