@@ -1,0 +1,92 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.game-container {
+  display: flex;
+  flex: 1;
+}
+
+.user,
+.cpu {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-score,
+.cpu-score {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(250, 250, 250);
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 3vh 0;
+}
+
+.title {
+  text-transform: uppercase;
+  background-color: teal;
+  color: white;
+  margin: 0;
+  text-align: center;
+  padding: 2vh 2vw;
+}
+
+.user-options {
+  background-color: red;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-options img,
+.cpu-options img {
+  margin: 2vh 2vw;
+}
+
+.cpu-options {
+  background-color: blue;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.rock,
+.paper,
+.scissors {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rock img,
+.paper img,
+.scissors img {
+  flex: 1;
+}
+
+.rock span,
+.paper span,
+.scissors span {
+  margin: 2vh 0;
+  font-size: 1.5rem;
+}
+
+.rock:hover,
+.paper:hover,
+.scissors:hover {
+  filter: brightness(120%);
+  transform: scale(150%);
+  cursor: pointer;
+}
