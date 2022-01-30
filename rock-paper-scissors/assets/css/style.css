@@ -6,87 +6,251 @@ body {
 .app-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
 }
-
-.game-container {
-  display: flex;
-  flex: 1;
-}
-
-.user,
-.cpu {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.user-score,
-.cpu-score {
-  display: flex;
-  justify-content: center;
-  background-color: rgb(250, 250, 250);
-  font-weight: bold;
-  font-size: 2rem;
-  padding: 3vh 0;
-}
-
-.title {
+.app-container .title {
+  background-color: #26495c;
   text-transform: uppercase;
-  background-color: teal;
   color: white;
   margin: 0;
   text-align: center;
-  padding: 2vh 2vw;
+  font-size: 5vw;
 }
-
-.user-options {
-  background-color: red;
+.app-container .game-container {
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+@media (orientation: portrait) {
+  .app-container .game-container {
+    flex-direction: column;
+  }
+}
+.app-container .game-container .begin-infos {
+  visibility: hidden;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: yellow;
+  width: 50vw;
+  height: 50vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.app-container .game-container .begin-infos > * {
+  margin: 2vh 2vw;
+}
+.app-container .game-container .begin-infos #set-score {
+  margin-bottom: 0;
+  margin-top: 0;
+  flex: 1;
+}
+.app-container .game-container .begin-infos label {
+  margin-bottom: 0;
+}
+.app-container .game-container .begin-infos .warning-message {
+  text-align: left;
+  margin-top: 0;
+  color: red;
+}
+.app-container .game-container .begin-infos #play {
+  margin: 0;
+  border: none;
+  background-color: teal;
+  color: white;
+  flex: 1;
+  padding: 2vh 2vw;
+  font-size: 1.2rem;
+}
+.app-container .game-container .begin-infos #play:hover {
+  filter: brightness(120%);
+  cursor: pointer;
+}
+.app-container .game-container .begin-infos .end-game-message {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 5vw;
+  text-transform: uppercase;
 }
-
-.user-options img,
-.cpu-options img {
-  margin: 2vh 2vw;
+@media (orientation: portrait) {
+  .app-container .game-container .begin-infos {
+    width: 80vw;
+    height: 20vh;
+  }
 }
-
-.cpu-options {
-  background-color: blue;
+.app-container .game-container .player-container,
+.app-container .game-container .computer-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.app-container .game-container .player-container {
+  background-color: #c66b3d;
+}
+@media (orientation: portrait) {
+  .app-container .game-container .player-container {
+    order: 1;
+  }
+}
+.app-container .game-container .player-container .player-score,
+.app-container .game-container .player-container .player-infos {
+  font-size: 2vw;
+  background-color: #316879;
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
 }
-
-.rock,
-.paper,
-.scissors {
+@media (orientation: portrait) {
+  .app-container .game-container .player-container .player-score,
+.app-container .game-container .player-container .player-infos {
+    font-size: 3vw;
+  }
+}
+@media (orientation: portrait) {
+  .app-container .game-container .player-container .player-infos {
+    order: -1;
+  }
+}
+@media (orientation: portrait) {
+  .app-container .game-container .player-container .player-score {
+    order: 1;
+  }
+}
+.app-container .game-container .player-container .player-options {
+  display: flex;
+  flex: 10;
+  align-items: center;
+  justify-content: center;
+}
+@media (orientation: portrait) {
+  .app-container .game-container .player-container .player-options {
+    flex: 1;
+  }
+}
+.app-container .game-container .player-container .player-options .rock,
+.app-container .game-container .player-container .player-options .paper,
+.app-container .game-container .player-container .player-options .scissors {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.rock img,
-.paper img,
-.scissors img {
+  margin: 2vh 2vw;
   flex: 1;
 }
-
-.rock span,
-.paper span,
-.scissors span {
-  margin: 2vh 0;
-  font-size: 1.5rem;
-}
-
-.rock:hover,
-.paper:hover,
-.scissors:hover {
-  filter: brightness(120%);
-  transform: scale(150%);
+.app-container .game-container .player-container .player-options .rock:hover,
+.app-container .game-container .player-container .player-options .paper:hover,
+.app-container .game-container .player-container .player-options .scissors:hover {
   cursor: pointer;
+  transform: scale(1.3);
+  filter: brightness(120%);
 }
+@media (orientation: portrait) {
+  .app-container .game-container .player-container .player-options .rock:hover,
+.app-container .game-container .player-container .player-options .paper:hover,
+.app-container .game-container .player-container .player-options .scissors:hover {
+    transform: scale(1.1);
+  }
+}
+.app-container .game-container .player-container .player-options .rock span,
+.app-container .game-container .player-container .player-options .paper span,
+.app-container .game-container .player-container .player-options .scissors span {
+  margin: 2vh 2vw;
+  text-transform: uppercase;
+  font-size: 1.5vw;
+  user-select: none;
+}
+@media (orientation: portrait) {
+  .app-container .game-container .player-container .player-options .rock span,
+.app-container .game-container .player-container .player-options .paper span,
+.app-container .game-container .player-container .player-options .scissors span {
+    font-size: 3vw;
+  }
+}
+.app-container .game-container .player-container .player-options .rock img,
+.app-container .game-container .player-container .player-options .paper img,
+.app-container .game-container .player-container .player-options .scissors img {
+  width: 90%;
+  min-width: 10%;
+  min-height: 10%;
+  user-select: none;
+}
+.app-container .game-container .computer-container {
+  background-color: #c4a35a;
+}
+.app-container .game-container .computer-container .computer-score,
+.app-container .game-container .computer-container .computer-infos {
+  font-size: 2vw;
+  text-align: center;
+  background-color: #316879;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+@media (orientation: portrait) {
+  .app-container .game-container .computer-container .computer-score,
+.app-container .game-container .computer-container .computer-infos {
+    font-size: 3vw;
+  }
+}
+.app-container .game-container .computer-container .computer-options {
+  display: flex;
+  flex: 10;
+  align-items: center;
+  justify-content: center;
+}
+@media (orientation: portrait) {
+  .app-container .game-container .computer-container .computer-options {
+    flex: 1;
+  }
+}
+.app-container .game-container .computer-container .computer-options .rock,
+.app-container .game-container .computer-container .computer-options .paper,
+.app-container .game-container .computer-container .computer-options .scissors {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2vh 2vw;
+  flex: 1;
+}
+.app-container .game-container .computer-container .computer-options .rock span,
+.app-container .game-container .computer-container .computer-options .paper span,
+.app-container .game-container .computer-container .computer-options .scissors span {
+  margin: 2vh 2vw;
+  text-transform: uppercase;
+  font-size: 1.5vw;
+  user-select: none;
+}
+@media (orientation: portrait) {
+  .app-container .game-container .computer-container .computer-options .rock span,
+.app-container .game-container .computer-container .computer-options .paper span,
+.app-container .game-container .computer-container .computer-options .scissors span {
+    font-size: 3vw;
+  }
+}
+.app-container .game-container .computer-container .computer-options .rock img,
+.app-container .game-container .computer-container .computer-options .paper img,
+.app-container .game-container .computer-container .computer-options .scissors img {
+  width: 90%;
+  min-width: 10%;
+  min-height: 10%;
+  user-select: none;
+}
+
+.selected-option {
+  cursor: pointer;
+  transform: scale(1.3);
+  filter: brightness(120%);
+}
+@media (orientation: portrait) {
+  .selected-option {
+    transform: scale(1.1);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

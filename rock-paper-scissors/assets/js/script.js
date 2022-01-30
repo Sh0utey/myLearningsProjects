@@ -1,37 +1,104 @@
-//USER DECLARATION
-const userChoices = document.querySelectorAll(".user-options > *");
-const userOptions = document.querySelector(".user-option");
-let userChoice;
+const playerOptions = document.querySelectorAll(".player-options > *");
+const playerScore = document.querySelector(".player-score");
+const playerInfos = document.querySelector(".player-infos");
+let playerChoice;
+let playerScoreCounter = 0;
+let canIPlay = true;
 
-//COMPUTER DECLARATION
-const cpuChoices = document.querySelectorAll(".cpu-options > *");
-const cpuOptions = document.querySelector(".cpu-options");
-let randomNumber;
+const computerOptions = document.querySelectorAll(".computer-options > *");
+const computerScore = document.querySelector(".computer-score");
+const computerInfos = document.querySelector(".computer-infos");
 let computerChoice;
+let computerScoreCounter = 0;
+let randomComputerChoice;
 
-//-------------COMPUTER-------------//
-const randomComputerChoice = () => {
-  randomNumber = Math.floor(Math.random() * 3);
-  computerChoice = cpuChoices[randomNumber].className;
-  cpuOptions.innerHTML = "";
+const generateComputerChoice = () => {
+  randomComputerChoice = Math.floor(Math.random() * 3);
+  computerChoice = computerOptions[randomComputerChoice].className;
+  computerOptions[randomComputerChoice].classList.add("selected-option");
+};
+
+const waitingMessage = () => {
+  setTimeout(() => {
+    computerInfos.textContent = "Are you ready?";
+    playerInfos.textContent = "Choose an option to begin the game";
+  }, 4000);
+};
+
+const infoMessage = (
+  user,
+  score,
+  scoreCounter,
+  computerMessage,
+  playerMessage
+) => {
+  score.textContent = `${user} SCORE : ${scoreCounter}`;
+  playerInfos.textContent = playerMessage;
+  computerInfos.textContent = computerMessage;
+
+  waitingMessage();
+};
+
+const askReplay = () => {
+  // formulaire qui demande en combien de points
+  // 1 bouton rejouer -> canIplay = true si c'est cliqué
+  // div absolute
 };
 
 const lauchGame = () => {
-  userChoices.forEach((userOption) => {
-    userOption.addEventListener("click", () => {
-      randomComputerChoice();
-      userChoice = userOption.className;
-
-      if (userChoice === computerChoice) {
-        console.log("égalité");
-      } else if (
-        (userChoice === "rock" && computerChoice === "scissors") ||
-        (userChoice === "paper" && computerChoice === "rock") ||
-        (userChoice === "scissors" && computerChoice === "paper")
+  playerOptions.forEach((playerOption) => {
+    playerOption.addEventListener("click", () => {
+      if (
+        canIPlay === true &&
+        playerScoreCounter < 3 &&
+        computerScoreCounter < 3
       ) {
-        console.log("c'est gagné");
+        canIPlay = false;
+        playerChoice = playerOption.className;
+        generateComputerChoice();
+        playerOption.classList.add("selected-option");
+
+        if (playerChoice === computerChoice) {
+          console.log("equality");
+          computerInfos.textContent = `Equality!`;
+          playerInfos.textContent = `Equality!`;
+          waitingMessage();
+        } else if (
+          (playerChoice === "rock" && computerChoice === "scissors") ||
+          (playerChoice === "paper" && computerChoice === "rock") ||
+          (playerChoice === "scissors" && computerChoice === "paper")
+        ) {
+          console.log("player win");
+          playerScoreCounter++;
+          infoMessage(
+            "PLAYER",
+            playerScore,
+            playerScoreCounter,
+            `Loose!`,
+            `Win!`
+          );
+        } else {
+          console.log("player loose");
+          computerScoreCounter++;
+          infoMessage(
+            "COMPUTER",
+            computerScore,
+            computerScoreCounter,
+            `Win`,
+            `Loose`
+          );
+        }
+        setTimeout(() => {
+          canIPlay = true;
+          playerOption.classList.remove("selected-option");
+          computerOptions[randomComputerChoice].classList.remove(
+            "selected-option"
+          );
+        }, 4000);
       } else {
-        console.log("c'est perdu");
+        console.log("c'est fini");
+        canIPlay = false;
+        askReplay();
       }
     });
   });

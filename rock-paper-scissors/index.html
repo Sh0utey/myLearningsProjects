@@ -1,53 +1,68 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Rock Paper Scissors</title>
+    <title>Rock - Paper - Scissors (Game)</title>
   </head>
   <body>
     <div class="app-container">
-      <h1 class="title">Rock - Paper - Scissors</h1>
+      <h1 class="title">Rock - Paper - Scissors (Game)</h1>
       <div class="game-container">
-        <div class="user">
-          <div class="user-score">PLAYER SCORE:</div>
-          <div class="user-options">
-            <div class="rock">
-              <img src="./assets/images/rock.png" alt="rock" />
-              <span>ROCK</span>
-            </div>
-            <div class="paper">
-              <img src="./assets/images/paper.png" alt="paper" />
-              <span>PAPER</span>
-            </div>
-            <div class="scissors">
-              <img src="./assets/images/scissors.png" alt="scissors" />
-              <span>SCISSORS</span>
-            </div>
-          </div>
-        </div>
+        <form action="#" class="begin-infos">
+          <span class="end-game-message">Win or loose</span>
+          <label for="set-score">Set the score to reach to win:</label>
+          <input
+            type="number"
+            name="set-score"
+            id="set-score"
+            autocomplete="off"
+          />
+          <span class="warning-message">Please enter a number</span>
+          <input type="submit" value="PLAY" id="play" />
+        </form>
 
-        <div class="cpu">
-          <div class="cpu-score">COMPUTER SCORE:</div>
-          <div class="cpu-options">
+        <div class="player-container">
+          <div class="player-score">PLAYER SCORE: 0</div>
+          <div class="player-options">
             <div class="rock">
               <img src="./assets/images/rock.png" alt="rock" />
-              <span>ROCK</span>
+              <span>rock</span>
             </div>
             <div class="paper">
               <img src="./assets/images/paper.png" alt="paper" />
-              <span>PAPER</span>
+              <span>paper</span>
             </div>
             <div class="scissors">
               <img src="./assets/images/scissors.png" alt="scissors" />
-              <span>SCISSORS</span>
+              <span>scissors</span>
             </div>
           </div>
+          <div class="player-infos">Choose an option to begin the game</div>
+        </div>
+        <div class="computer-container">
+          <div class="computer-score">COMPUTER SCORE: 0</div>
+          <div class="computer-options">
+            <div class="rock">
+              <img src="./assets/images/rock.png" alt="rock" />
+              <span>rock</span>
+            </div>
+            <div class="paper">
+              <img src="./assets/images/paper.png" alt="paper" />
+              <span>paper</span>
+            </div>
+            <div class="scissors">
+              <img src="./assets/images/scissors.png" alt="scissors" />
+              <span>scissors</span>
+            </div>
+          </div>
+          <div class="computer-infos">Are you ready?</div>
         </div>
       </div>
     </div>
+
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
