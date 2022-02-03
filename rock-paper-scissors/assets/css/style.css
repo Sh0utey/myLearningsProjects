@@ -27,7 +27,6 @@ body {
   }
 }
 .app-container .game-container .begin-infos {
-  visibility: hidden;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -41,35 +40,39 @@ body {
 .app-container .game-container .begin-infos > * {
   margin: 2vh 2vw;
 }
-.app-container .game-container .begin-infos #set-score {
+.app-container .game-container .begin-infos .begin-settings {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: end;
+}
+.app-container .game-container .begin-infos .begin-settings #set-score {
   margin-bottom: 0;
   margin-top: 0;
-  flex: 1;
 }
-.app-container .game-container .begin-infos label {
+.app-container .game-container .begin-infos .begin-settings label {
   margin-bottom: 0;
 }
-.app-container .game-container .begin-infos .warning-message {
+.app-container .game-container .begin-infos .begin-settings .warning-message {
   text-align: left;
   margin-top: 0;
   color: red;
 }
-.app-container .game-container .begin-infos #play {
+.app-container .game-container .begin-infos .begin-settings #play {
   margin: 0;
   border: none;
   background-color: teal;
   color: white;
-  flex: 1;
-  padding: 2vh 2vw;
   font-size: 1.2rem;
+  flex: 1;
 }
-.app-container .game-container .begin-infos #play:hover {
+.app-container .game-container .begin-infos .begin-settings #play:hover {
   filter: brightness(120%);
   cursor: pointer;
 }
 .app-container .game-container .begin-infos .end-game-message {
-  flex: 1;
   display: flex;
+  flex: 1;
   justify-content: center;
   align-items: center;
   font-size: 5vw;

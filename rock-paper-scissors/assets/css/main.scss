@@ -32,7 +32,6 @@ body {
     }
 
     .begin-infos {
-      visibility: hidden;
       position: absolute;
       display: flex;
       flex-direction: column;
@@ -47,45 +46,51 @@ body {
         margin: 2vh 2vw;
       }
 
-      #set-score {
-        margin-bottom: 0;
-        margin-top: 0;
+      .begin-settings {
+        display: flex;
+        flex-direction: column;
         flex: 1;
-      }
+        justify-content: end;
 
-      label {
-        margin-bottom: 0;
-      }
+        #set-score {
+          margin-bottom: 0;
+          margin-top: 0;
+        }
 
-      .warning-message {
-        text-align: left;
-        margin-top: 0;
-        color: red;
-      }
+        label {
+          margin-bottom: 0;
+        }
 
-      #play {
-        margin: 0;
-        border: none;
-        background-color: teal;
-        color: white;
-        flex: 1;
-        padding: 2vh 2vw;
-        font-size: 1.2rem;
+        .warning-message {
+          text-align: left;
+          margin-top: 0;
+          color: red;
+        }
 
-        &:hover {
-          filter: brightness(120%);
-          cursor: pointer;
+        #play {
+          margin: 0;
+          border: none;
+          background-color: teal;
+          color: white;
+          font-size: 1.2rem;
+          flex: 1;
+
+          &:hover {
+            filter: brightness(120%);
+            cursor: pointer;
+          }
         }
       }
 
       .end-game-message {
-        flex: 1;
         display: flex;
+        flex: 1;
         justify-content: center;
         align-items: center;
         font-size: 5vw;
         text-transform: uppercase;
       }
+
       @media (orientation: portrait) {
         width: 80vw;
         height: 20vh;

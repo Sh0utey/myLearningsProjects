@@ -13,15 +13,19 @@
       <div class="game-container">
         <form action="#" class="begin-infos">
           <span class="end-game-message">Win or loose</span>
-          <label for="set-score">Set the score to reach to win:</label>
-          <input
-            type="number"
-            name="set-score"
-            id="set-score"
-            autocomplete="off"
-          />
-          <span class="warning-message">Please enter a number</span>
-          <input type="submit" value="PLAY" id="play" />
+          <div class="begin-settings">
+            <label for="set-score">Set the score to reach to win:</label>
+            <input
+              type="number"
+              name="set-score"
+              id="set-score"
+              autocomplete="off"
+            />
+            <span class="warning-message"
+              >Please enter a positive number above 0.</span
+            >
+            <input type="submit" value="PLAY" id="play" />
+          </div>
         </form>
 
         <div class="player-container">
